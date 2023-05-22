@@ -1,10 +1,7 @@
-<script setup>
-import Nav from "./components/Nav.vue";
-</script>
+<script setup></script>
 
 <template>
-  <div id="app">
-    <Nav />
+  <div id="app" class="primary-bg primary-text">
     <router-view></router-view>
   </div>
 </template>

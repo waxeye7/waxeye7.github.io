@@ -1,8 +1,16 @@
 <template>
   <div class="projects">
-    <h2>My Projects</h2>
     <div class="project-grid">
-      <div v-for="project in projects" :key="project.id" class="project-card">
+      <div
+        v-for="project in projects"
+        :key="project.id"
+        class="project-card"
+        @click="openModal(project)"
+      >
+        <div class="inside-image-on-hover">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </div>
         <div class="project-card-inner">
           <div class="project-card-front">
             <img
@@ -14,18 +22,11 @@
         </div>
       </div>
     </div>
-    <div v-if="selectedProject" class="modal" @click="closeModal">
-      <div class="modal-content">
+    <div v-if="selectedProject" class="modal" @click="selectedProject = null">
+      <div v-on:click.stop class="modal-content">
         <h3>{{ selectedProject.title }}</h3>
-        <img
-          :src="selectedProject.image"
-          :alt="selectedProject.title"
-          class="modal-image"
-        />
         <p>{{ selectedProject.description }}</p>
-        <a :href="selectedProject.demoLink" target="_blank" class="modal-link"
-          >View Demo</a
-        >
+        <div target="_blank" class="modal-link">View More</div>
       </div>
     </div>
   </div>
@@ -102,9 +103,11 @@ export default {
 
 <style scoped>
 .projects {
-  background-color: #1a202c;
+  background-color: #212121; /* Secondary Color: Charcoal Gray */
   padding: 20px;
-  color: #ffffff;
+  color: #e8e8e8; /* Primary Color: Light Gray */
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .projects h2 {
@@ -115,6 +118,7 @@ export default {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
   grid-gap: 20px;
 }
 
@@ -140,6 +144,7 @@ export default {
   overflow: normal;
   border-radius: 0px !important;
 }
+
 .project-card-inner:hover {
   overflow: hidden;
 }
@@ -164,7 +169,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   text-align: center;
 }
 
@@ -172,8 +176,8 @@ export default {
   opacity: 0;
 }
 
-.project-card:hover .project-card-back {
-  opacity: 1;
+.project-card:hover > .inside-image-on-hover {
+  opacity: 1 !important;
 }
 
 .project-image {
@@ -194,36 +198,17 @@ export default {
   font-size: 14px;
 }
 
-.demo-link-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-
-.project-card:hover .demo-link-overlay {
-  opacity: 1;
-}
-
 .demo-link-text {
   color: #ffffff;
   font-size: 16px;
   padding: 8px 16px;
-  background-color: #333333;
+  background-color: #ff4081; /* Accent Color: Pink */
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .demo-link-text:hover {
-  background-color: #555555;
+  background-color: #ff6098; /* Lighter Shade of Accent Color: Pink */
 }
 
 .modal {
@@ -236,9 +221,10 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
-
 .modal-content {
+  z-index: 3;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
@@ -261,7 +247,7 @@ export default {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #333333;
+  background-color: #ff4081; /* Accent Color: Pink */
   color: #ffffff;
   text-decoration: none;
   border-radius: 4px;
@@ -269,6 +255,10 @@ export default {
 }
 
 .modal-link:hover {
-  background-color: #555555;
+  background-color: #ff6098; /* Lighter Shade of Accent Color: Pink */
+}
+.inside-image-on-hover {
+  position: absolute;
+  opacity: 0;
 }
 </style>

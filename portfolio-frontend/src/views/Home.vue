@@ -1,75 +1,95 @@
 <template>
-  <div class="home">
-    <h2>Welcome to My Portfolio</h2>
-    <div class="home-content">
-      <div class="feature">
-        <h3>Web Development</h3>
-        <p>
-          I specialize in creating modern and responsive websites using the
-          latest web technologies. From simple landing pages to complex web
-          applications, I have the expertise to bring your ideas to life.
-        </p>
-      </div>
-      <div class="feature">
-        <h3>UI/UX Design</h3>
-        <p>
-          User experience is a top priority in my design process. I carefully
-          consider every detail to ensure that the websites I create are not
-          only visually appealing but also intuitive and easy to navigate for
-          users.
-        </p>
-      </div>
-      <div class="feature">
-        <h3>Responsive Design</h3>
-        <p>
-          In today's mobile-driven world, it's crucial for websites to adapt to
-          different screen sizes. I design and develop responsive websites that
-          provide a seamless user experience across all devices, from desktop
-          computers to smartphones.
-        </p>
+  <div class="home-page">
+    <div class="content">
+      <h1>Merlin the Magician</h1>
+      <p>
+        A web developer from Christchurch, New Zealand who believes there's
+        always a way, yes, I'm stubborn.
+      </p>
+    </div>
+
+    <div class="hex-grid">
+      <div
+        v-for="(row, rowIndex) in hexGrid"
+        :key="rowIndex"
+        class="hex-row bottom-row"
+      >
+        <div v-for="(hex, hexIndex) in row" :key="hexIndex" class="hexagon">
+          <div class="hexagon-inner" @click="goToPage(hex.page)">
+            {{ hex.label }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      hexGrid: [
+        [
+          { label: "About", page: "about" },
+          { label: "Portfolio", page: "portfolio" },
+        ],
+        [{ label: "Contact", page: "contact" }],
+      ],
+    };
+  },
+  methods: {
+    goToPage(page) {
+      // Handle page navigation
+    },
+  },
+};
+</script>
+
 <style scoped>
-.home {
-  background-color: #f7f7f7;
-  padding: 20px;
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.home h2 {
+.content {
   text-align: center;
-  color: #333333;
+  margin-bottom: 2rem;
 }
 
-.home-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  margin-top: 20px;
+.hex-grid {
+  margin-top: 2rem;
 }
 
-.feature {
-  background-color: #ffffff;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+.hex-row {
+  display: flex;
+  justify-content: center;
 }
 
-.feature:hover {
-  transform: translateY(-5px);
+.hexagon {
+  width: 10rem;
+  height: 10rem;
+  background-color: #e6e6e6;
+  clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
+  cursor: pointer;
+  margin: -0.8rem;
+}
+.bottom-row .hexagon {
+  margin-top: -1.3rem;
 }
 
-.feature h3 {
-  font-size: 20px;
-  color: #333333;
-  margin-bottom: 10px;
+.hexagon-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #000;
+  font-weight: bold;
 }
 
-.feature p {
-  font-size: 16px;
-  color: #555555;
+.hexagon:hover {
+  background-color: #d6d6d6;
 }
 </style>
