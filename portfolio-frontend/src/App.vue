@@ -1,5 +1,10 @@
+<script setup>
+import Nav from "./components/Nav.vue";
+</script>
+
 <template>
   <div id="app">
+    <Nav />
     <router-view></router-view>
   </div>
 </template>
@@ -8,4 +13,4 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped></style>
