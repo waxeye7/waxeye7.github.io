@@ -1,5 +1,9 @@
 <template>
-  <div class="homepage">
+  <div class="about">
+    <div class="img-abs-wrapper">
+      <img class="img-absolute" src="../../public/images/home.svg" alt="" />
+    </div>
+
     <section class="introduction section1">
       <h1>Welcome to my Portfolio</h1>
       <p>
@@ -86,10 +90,11 @@
 </template>
 
 <style scoped>
-.homepage {
+.about {
   background-color: #2d2d2d;
   color: #fff;
   padding: 20px;
+  position: relative;
 }
 
 .section1 {
@@ -150,5 +155,29 @@ ul {
 .author {
   color: #aaa;
   margin-top: 10px;
+}
+.img-abs-wrapper {
+  position: fixed;
+  top: -22px;
+  left: -22px;
+  height: 80px;
+  width: 80px;
+  z-index: 24;
+  border-radius: 46%;
+  background-color: black;
+  overflow: hidden;
+}
+.img-abs-wrapper:hover {
+  background-color: white;
+}
+.img-abs-wrapper:hover > .img-absolute {
+  stroke: black;
+}
+.img-absolute {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 44px;
+  z-index: 44;
 }
 </style>
