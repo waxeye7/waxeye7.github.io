@@ -31,7 +31,7 @@ export default {
       hexGrid: [
         [
           { label: "About", page: "about" },
-          { label: "Portfolio", page: "portfolio" },
+          { label: "Projects", page: "projects" },
         ],
         [{ label: "Contact", page: "contact" }],
       ],
@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     goToPage(page) {
+      this.$router.push(page);
       // Handle page navigation
     },
   },
