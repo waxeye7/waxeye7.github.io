@@ -1,91 +1,142 @@
-#app {
-  min-height: 100vh;
+@font-face {
+  font-family: "Quicksand";
+  src: url("/public/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
+
+/* For Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+html::-moz-scrollbar {
+  width: 12px;
+}
+
+html::-moz-scrollbar-track {
+  background-color: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
+html::-moz-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-bg);
+}
+
+html::-moz-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+:root {
+  /* Dark theme variables */
+  --primary-bg-dark: #212121;
+  --primary-text-dark: #e8e8e8;
+  --secondary-bg-dark: #383838;
+  --button-bg-dark: #ff4081;
+  --button-hover-bg-dark: #ff6b9c;
+  --scrollbar-bg-dark: #6a6a6a;
+  --scrollbar-thumb-dark: #a8a8a8;
+  --scrollbar-thumb-hover-dark: #c8c8c8;
+
+  /* Light theme variables */
+  --primary-bg-light: #ffffff;
+  --primary-text-light: #000000;
+  --secondary-bg-light: #f2f2f2;
+  --button-bg-light: #ff4081;
+  --button-hover-bg-light: #ff6b9c;
+  --scrollbar-bg-light: #e8e8e8;
+  --scrollbar-thumb-light: #b4b4b4;
+  --scrollbar-thumb-hover-light: #959595;
+}
+
+body[data-theme="dark"] {
+  --primary-bg: var(--primary-bg-dark);
+  --primary-text: var(--primary-text-dark);
+  --button-bg: var(--button-bg-dark);
+  --button-hover-bg: var(--button-hover-bg-dark);
+  --scrollbar-bg: var(--scrollbar-bg-dark);
+  --scrollbar-thumb: var(--scrollbar-thumb-dark);
+  --scrollbar-thumb-hover: var(--scrollbar-thumb-hover-dark);
+}
+
+body[data-theme="light"] {
+  --primary-bg: var(--primary-bg-light);
+  --primary-text: var(--primary-text-light);
+  --button-bg: var(--button-bg-light);
+  --button-hover-bg: var(--button-hover-bg-light);
+  --scrollbar-bg: var(--scrollbar-bg-light);
+  --scrollbar-thumb: var(--scrollbar-thumb-light);
+  --scrollbar-thumb-hover: var(--scrollbar-thumb-hover-light);
+}
+
 body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background-color 0.45s ease-out, color 0.45s ease-out;
+  cursor: default;
+}
+
+/* Global styles */
+body,
+html {
   margin: 0;
+  min-height: 100vh;
+  font-family: "Quicksand", "Roboto", sans-serif;
 }
 
-.primary-bg {
-  background-color: #212121;
-}
-.primary-text {
-  color: #e8e8e8;
-}
-
-.link-button {
-  display: inline-block;
-  font-size: 24px;
-  padding: 12px 24px;
-  background-color: #ff4081; /* Accent Color: Pink */
-  color: #ffffff; /* Primary Color: Light Gray */
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.link-button:hover {
-  background-color: #ff6b9c; /* Lighter shade of the Accent Color on hover */
-}
+/* Typography */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
   margin: 0;
+  font-family: "Quicksand", "Montserrat", sans-serif;
 }
-a,
+
 p,
+a,
+ul,
 li {
-  font-family: "Roboto", sans-serif;
   margin: 0;
+  font-family: "Quicksand", "Roboto", sans-serif;
 }
 
-.section2 {
-  background-color: #212121; /* Darker shade of your primary color */
-}
-
-.section1 {
-  background-color: #383838; /* Slightly lighter shade of your primary color */
-}
-/* For Webkit-based browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #393939;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #555;
+/* Button styles */
+.link-button {
+  display: inline-block;
+  font-size: 24px;
+  padding: 12px 24px;
+  background-color: #ff4081;
+  color: #ffffff;
+  text-decoration: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #777;
-}
-
-/* For Firefox */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #555 #393939;
-}
-
-html::-moz-scrollbar {
-  width: 8px;
-}
-
-html::-moz-scrollbar-track {
-  background-color: #393939;
-}
-
-html::-moz-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 4px;
-}
-
-html::-moz-scrollbar-thumb:hover {
-  background-color: #777;
+.link-button:hover {
+  background-color: var(--button-hover-bg);
 }
