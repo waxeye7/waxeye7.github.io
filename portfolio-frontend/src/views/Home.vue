@@ -35,14 +35,14 @@
       </div>
     </section>
 
-    <section class="achievements">
+    <!-- <section class="achievements">
       <h2>Merlin's Achievements</h2>
       <ul>
         <li>Full Stack Web Development Course Completion</li>
         <li>Backend Development Competition Winner</li>
         <li>Certified Node.js Developer</li>
       </ul>
-    </section>
+    </section> -->
 
     <section class="contact">
       <h2>Contact Merlin</h2>

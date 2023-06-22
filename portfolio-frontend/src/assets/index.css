@@ -49,22 +49,25 @@ html::-moz-scrollbar-thumb:hover {
 }
 
 :root {
+  --primary-bg-dark: #cd5c5c;
+  --primary-text-dark: #ffffff;
+
+  --primary-bg-light: #ffe4e1;
+  --primary-text-light: #000000;
   /* Dark theme variables */
-  --primary-bg-dark: #212121;
-  --primary-text-dark: #e8e8e8;
-  --secondary-bg-dark: #383838;
+
   --button-bg-dark: #ff4081;
   --button-hover-bg-dark: #ff6b9c;
+
   --scrollbar-bg-dark: #6a6a6a;
   --scrollbar-thumb-dark: #a8a8a8;
   --scrollbar-thumb-hover-dark: #c8c8c8;
 
   /* Light theme variables */
-  --primary-bg-light: #ffffff;
-  --primary-text-light: #000000;
-  --secondary-bg-light: #f2f2f2;
+
   --button-bg-light: #ff4081;
   --button-hover-bg-light: #ff6b9c;
+
   --scrollbar-bg-light: #e8e8e8;
   --scrollbar-thumb-light: #b4b4b4;
   --scrollbar-thumb-hover-light: #959595;
