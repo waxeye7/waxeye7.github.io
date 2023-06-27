@@ -5,7 +5,12 @@
       class="link-button theme-button"
       @click="toggleTheme"
     />
-    <div class="flex">
+    <div class="flex first-section">
+      <svg class="arrows">
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+      </svg>
       <section class="introduction flex-one section-one-child">
         <div class="img-wrapper">
           <img
@@ -15,44 +20,61 @@
           />
         </div>
 
-        <p class="small-margin-bottom">
-          Hello there, I'm Merlin Stemmer. Born and raised in Christchurch, New
-          Zealand, with German roots. I'm a web developer by trade, with a knack
-          for problem-solving and a love for crafting beautiful things from
-          lines of code.
-        </p>
+        <div class="high-width">
+          <p class="small-margin-bottom">
+            Hi there, I'm Merlin Stemmer, a Christchurch native with German
+            roots. I'm a web developer, passionate about problem-solving and
+            crafting meaningful things through code.
+          </p>
 
-        <p class="small-margin-bottom">
-          Like many people, I enjoy playing sports. I like to hit the tennis,
-          table tennis, or badminton court whenever I can. Video games, strategy
-          games, and board games help me hone my strategic thinking and planning
-          skills, and they're just a whole lot of fun.
-        </p>
+          <p class="small-margin-bottom">
+            I enjoy hitting the tennis, table tennis, or badminton courts. But,
+            my interest goes beyond sports to video games, strategy games, and
+            board games. They're not just fun, but they also hone my strategic
+            thinking.
+          </p>
 
-        <p class="small-margin-bottom">
-          There's one game, though, that stands out from the rest: Screeps. It's
-          a game for coders, where you use JavaScript to control a virtual
-          colony. It's not just a game, it's a sandbox where I can flex my
-          coding skills, learn new strategies, and have a bit of fun along the
-          way. It's fair to say I talk about Screeps a fair bit, but only to
-          those who can appreciate the thrill of a well-executed script.
-        </p>
+          <p class="small-margin-bottom">
+            Screeps, a coding game, has a special place in my life. More than a
+            game, it's a playground where I flex my JavaScript skills, develop
+            strategies, and enjoy. You'll often find me discussing Screeps,
+            especially with those who appreciate a well-executed script.
+          </p>
 
-        <p class="small-margin-bottom">
-          When it comes to my work, I lean more towards the coding and backend
-          side of things, but I can still deliver a great design when needed. I
-          apply the same principles to my work that I use when gaming or coding
-          for fun – precision, efficiency, and a creative spark. It's all about
-          taking a problem, breaking it down, and finding the best way to solve
-          it.
-        </p>
+          <p class="small-margin-bottom">
+            In my professional life, I tend to gravitate more towards coding and
+            backend work. However, I can rise to the occasion when a great
+            design is required. Precision, efficiency, and creativity - the
+            principles I follow in gaming, are the same ones I apply to my work.
+          </p>
 
-        <p>
-          All in all, I'm just a guy who loves a good challenge, whether it's in
-          my work, a game, or life itself. I'm always looking forward to the
-          next thing, ready to learn and grow. And I'm pretty excited to see
-          where my coding and web development journey takes me next.
-        </p>
+          <p>
+            At the end of the day, I love challenges, be it in work, games, or
+            life. Always eager to learn and grow, I can't wait to see where my
+            web development journey leads next.
+          </p>
+        </div>
+        <div class="low-width">
+          <p class="small-margin-bottom">
+            Hi, I'm Merlin Stemmer, a Christchurch-born web developer with a
+            love for problem-solving and crafting code.
+          </p>
+
+          <p class="small-margin-bottom">
+            Sports, strategy games, and particularly Screeps, a coding game,
+            enhance my strategic thinking and bring me joy.
+          </p>
+
+          <p class="small-margin-bottom">
+            While my professional focus leans towards coding and backend work, I
+            can create great designs when needed.
+          </p>
+
+          <p>
+            I relish challenges, love to grow, and eagerly anticipate the next
+            step in my web development journey.
+          </p>
+        </div>
       </section>
 
       <img
@@ -61,12 +83,6 @@
         src=""
         alt=""
       />
-
-      <svg class="arrows">
-        <path class="a1" d="M0 0 L30 32 L60 0"></path>
-        <path class="a2" d="M0 20 L30 52 L60 20"></path>
-        <path class="a3" d="M0 40 L30 72 L60 40"></path>
-      </svg>
     </div>
 
     <section class="skills">
@@ -183,11 +199,11 @@ export default {
   position: absolute;
   left: 50%;
   margin-left: -30px;
-  bottom: 20px;
+  bottom: 34px;
 }
 
 .arrows path {
-  stroke: var(--primary-color);
+  stroke: var(--primary-text);
   fill: transparent;
   stroke-width: 1px;
   animation: arrow 2s infinite;
@@ -262,7 +278,6 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
   margin-bottom: 8px;
 }
 
@@ -271,7 +286,7 @@ li {
   line-height: 1.6;
 }
 p {
-  font-size: 20px;
+  font-size: 18px;
 }
 ul {
   list-style-type: none;
@@ -322,6 +337,11 @@ img {
 img.half-opacity {
   opacity: 0.25;
 }
+.first-section {
+  position: relative;
+  height: 90vh;
+  padding-bottom: 10vh;
+}
 .section-one-child {
   margin: 20px;
 }
@@ -331,10 +351,21 @@ img.half-opacity {
   justify-content: center;
 }
 .img-title {
-  margin: 30px 10px 30px 0;
+  margin: 30px 10px 34px 0;
 }
 .introduction {
   font-weight: 500;
   text-align: justify;
+}
+.low-width {
+  display: none;
+}
+@media (max-width: 1450px) {
+  .low-width {
+    display: block;
+  }
+  .high-width {
+    display: none;
+  }
 }
 </style>
