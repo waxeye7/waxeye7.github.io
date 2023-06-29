@@ -178,3 +178,9 @@ a {
 a:hover {
   color: var(--link-hover-color) !important;
 }
+.unselectable {
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* Chrome, Safari and Opera syntax */
+  -moz-user-select: none; /* Firefox syntax */
+  -ms-user-select: none; /* IE 10+ syntax */
+}

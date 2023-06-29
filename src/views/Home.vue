@@ -2,7 +2,7 @@
   <img :src="imagePath" class="link-button theme-button" @click="toggleTheme" />
   <div class="portfolio">
     <div class="flex justify-center first-section">
-      <svg class="arrows">
+      <svg @click="scrollToSkills" class="arrows">
         <path class="a1" d="M0 0 L30 32 L60 0"></path>
         <path class="a2" d="M0 20 L30 52 L60 20"></path>
         <path class="a3" d="M0 40 L30 72 L60 40"></path>
@@ -73,7 +73,7 @@
         </div>
       </section>
 
-      <div class="wrapper-of-wrappers section-one-child flex-one">
+      <div class="wrapper-of-wrappers section-one-child flex-one unselectable">
         <div class="my-image-wrapper">
           <img
             src="/images/me.png"
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <section class="skills">
+    <section ref="skills" class="skills">
       <h2 class="subheading">My Skills</h2>
       <div class="logos">
         <div class="logo-item">
@@ -544,6 +544,9 @@ export default {
         document.querySelector(".img-title").classList.remove("half-opacity");
       }
     },
+    scrollToSkills() {
+      this.$refs.skills.scrollIntoView({ behavior: "smooth" });
+    },
     copyToClipboard() {
       navigator.clipboard
         .writeText(this.$refs.email.innerText)
@@ -572,7 +575,7 @@ export default {
   left: 50%;
   margin-left: -30px;
   bottom: 32px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .arrows path {
