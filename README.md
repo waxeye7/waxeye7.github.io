@@ -1,7 +1,5 @@
 # Merlin Stemmer Portfolio
 
-## Description
-
 This repository contains the source code for Merlin Stemmer's personal portfolio site. The portfolio is built with Vue.js and showcases Merlin's skills, projects, and contact information.
 
 ## Features
@@ -16,6 +14,8 @@ To see the live demo of Merlin Stemmer's portfolio, visit:
 
 [https://merlincodes.com](https://merlincodes.com)
 
-Please note that this site is strictly for personal use and not intended for redistribution or reuse without explicit permission.
+For any inquiries or collaboration opportunities, please reach out to Merlin Stemmer directly at stemmermerlin@gmail.com.
 
-For any inquiries or collaboration opportunities, please reach out to Merlin Stemmer directly.
+---
+
+Feel free to add or modify any sections in the README file according to your needs.
