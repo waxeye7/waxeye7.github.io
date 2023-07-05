@@ -15,7 +15,3 @@ To see the live demo of Merlin Stemmer's portfolio, visit:
 [https://merlincodes.com](https://merlincodes.com)
 
 For any inquiries or collaboration opportunities, please reach out to Merlin Stemmer directly at stemmermerlin@gmail.com.
-
----
-
-Feel free to add or modify any sections in the README file according to your needs.
