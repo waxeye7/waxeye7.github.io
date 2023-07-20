@@ -574,7 +574,7 @@ export default {
   position: absolute;
   left: 50%;
   margin-left: -30px;
-  bottom: 32px;
+  bottom: 4%;
   z-index: 1;
 }
 
@@ -726,14 +726,21 @@ img.half-opacity {
 }
 .first-section {
   position: relative;
-  height: 90vh;
+  height: auto;
   padding-bottom: 10vh;
-  display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
 .section-one-child {
   margin: 20px;
   box-sizing: border-box;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .section-one-child {
+    width: 45%;
+  }
 }
 .img-wrapper {
   width: 100%;
@@ -1029,9 +1036,17 @@ img.half-opacity {
     min-height: 180px;
   }
 }
-@media (max-width: 280px) {
+@media (max-width: 380px) {
+  .my-image-wrapper {
+    margin-top: 30px;
+  }
+  .first-section {
+    padding-bottom: 0%;
+  }
   .arrows {
     display: none;
   }
+}
+@media (max-width: 280px) {
 }
 </style>
