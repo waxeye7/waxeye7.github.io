@@ -492,7 +492,7 @@ export default {
       projects: [
         {
           id: 1,
-          title: "MMO RTS",
+          title: "Ranked Rumble",
           imageLink: "/images/mmo-rts.png",
           description:
             "MMO RTS is a project that explores the intricacies of creating a massively multiplayer online real-time strategy game. The game represents a rich shared world, where players can build structures, train units, gather resources, and engage with others in combat. The backend of the game utilizes Node.js, Express, and Socket.IO, with Vue.js driving the frontend. Game state data is managed using MongoDB.",
@@ -501,6 +501,15 @@ export default {
         },
         {
           id: 2,
+          title: "MMO RTS",
+          imageLink: "/images/mmo-rts.png",
+          description:
+            "MMO RTS is a project that explores the intricacies of creating a massively multiplayer online real-time strategy game. The game represents a rich shared world, where players can build structures, train units, gather resources, and engage with others in combat. The backend of the game utilizes Node.js, Express, and Socket.IO, with Vue.js driving the frontend. Game state data is managed using MongoDB.",
+          demoLink: "https://mmo-rts.com",
+          gitHubLink: "https://github.com/waxeye7/mmo-rts",
+        },
+        {
+          id: 3,
           title: "Periodic Table Viewer",
           imageLink: "/images/periodic-table.png",
           description:
@@ -509,7 +518,7 @@ export default {
           gitHubLink: "https://github.com/waxeye7/Periodic-Table-Filter",
         },
         {
-          id: 3,
+          id: 4,
           title: "TechSolutions",
           imageLink: "/images/techsolutions.png",
           description:
