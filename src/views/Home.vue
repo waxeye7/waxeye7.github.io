@@ -374,7 +374,7 @@
         <p>{{ project.description }}</p>
         <div class="links">
           <a :href="project.demoLink" target="_blank">View Live Site</a>
-          <span class="github-wrapper">
+          <span v-if="project.gitHubLink" class="github-wrapper">
             <a :href="project.gitHubLink" target="_blank">
               <svg
                 class="github"
@@ -445,21 +445,22 @@
     <section class="current-work">
       <h2 class="subheading">Currently Working On</h2>
       <p>
-        I'm currently working on my exciting MMO game called MMO-RTS. It's an
-        immersive multiplayer online real-time strategy game where players can
-        conquer vast virtual worlds, build powerful civilizations, and engage in
-        epic battles.
+        I'm currently working on my game called Ranked Rumble. It's a Game of
+        gaining points and climbing the leaderboard. Waging war, building farms,
+        and training units are all part of the fun.
       </p>
       <p>
         Visit the official website to learn more and join the fun:
-        <a target="_blank" href="https://mmo-rts.com">https://mmo-rts.com</a>
+        <a target="_blank" href="https://rankedrumble.com"
+          >https://rankedrumble.com</a
+        >
       </p>
-      <p>
+      <!-- <p>
         You can also check out the project on GitHub:
         <a target="_blank" href="https://github.com/waxeye7/mmo-rts"
           >https://github.com/waxeye7/mmo-rts</a
         >
-      </p>
+      </p> -->
       <p>Stay tuned for updates and new features as the game evolves!</p>
     </section>
 
@@ -493,11 +494,10 @@ export default {
         {
           id: 1,
           title: "Ranked Rumble",
-          imageLink: "/images/mmo-rts.png",
+          imageLink: "/images/rankedrumble.png",
           description:
-            "MMO RTS is a project that explores the intricacies of creating a massively multiplayer online real-time strategy game. The game represents a rich shared world, where players can build structures, train units, gather resources, and engage with others in combat. The backend of the game utilizes Node.js, Express, and Socket.IO, with Vue.js driving the frontend. Game state data is managed using MongoDB.",
-          demoLink: "https://mmo-rts.com",
-          gitHubLink: "https://github.com/waxeye7/mmo-rts",
+            "Ranked Rumble is an immersive strategy game where you accumulate points to further enhance your progress. Compete with other players, interact in a dynamic community, and strategically wage wars. Build and upgrade structures, gather resources, and deploy your forces wisely to gain an edge. The game backend is powered by Node.js, Express, and Web Sockets, while the frontend leverages Vue.js. Supabase is used for managing game state data. Join the battle at Ranked Rumble (dot com)!",
+          demoLink: "https://rankedrumble.com",
         },
         {
           id: 2,
@@ -781,6 +781,7 @@ img.half-opacity {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 0;
 }
 
 .github-wrapper,
@@ -815,6 +816,7 @@ img.half-opacity {
   margin: 0 0 8px 0;
 }
 .project-image-wrapper {
+  max-height: 400px;
   min-height: 240px;
   margin-bottom: 8px;
 }
